@@ -13,5 +13,8 @@ CREATE TABLE article
 `active`       BOOL NOT NULL DEFAULT 0,
 `title`        VARCHAR(50) NOT NULL,
 `text`         TEXT,
+`thumb_file`   VARCHAR(50),
 `date`         datetime DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE article ADD COLUMN `thumb_file` VARCHAR(50) AFTER `text`;
