@@ -1,1 +1,13 @@
 * Hello and Welcome to Gemar's SQL Experiments
+* This series will initially focus with MySQL
+* MySQL Developer Topics
+
+1. Architecture
+2. SQL Statement
+3. SQL Schema Objects
+4. Stored Programs
+5. Querying for Data
+6. Modifying Data
+7. Join Subquery Union
+8. Application Development
+9. Basic Optimization
