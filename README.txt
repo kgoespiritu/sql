@@ -56,7 +56,10 @@
    - Optimize InnoDB Tables
    - Optimize by Normalization
 
+*
 * MySQL Documentation Index
+*
+
 Preface
 General Information
 Installing and Upgrading MySQL
@@ -73,3 +76,21 @@ Globalization
 Data Types
 Functions and Operators
 SQL Statement Syntax
+
+InnoDB Storage Engine
+Alternative Storage Engines
+High Availability and Scalability
+Replication
+Cluster NDB
+Partitioning
+
+Stored Programs and Views
+Information_Schema
+Performance_Schema
+
+Connectors and API
+Extending MySQL
+
+MySQL Enterprise Edition
+MySQL Workbench
+MySQL for Excel
