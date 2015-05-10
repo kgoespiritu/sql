@@ -74,8 +74,113 @@ Optimization
 Language Structure
 Globalization
 Data Types
+   - overview
+   - numeric
+   - date time
+   - string
+   - spatial
+   - default
+   - 
+   - 
 Functions and Operators
+   - reference
+   - type conversion
+   - operators
+   - string
+   - numeric
+   - date / time
+   - calendar
+   - full text
+   - cast
+   - xml
+   - bit
+   - encryption & compression
+   - information
+   - spatial data
+   - gtid
+   - enterprise encryption
+   - miscellanous
+   - group by
+      - AVG()
+      - COUNT( [DISTINCT] )
+      - GROUP_CONCAT()
+      - MAX()
+      - MIN()
+      - STD()
+      - STDDEV_POP()
+      - STDDEX_SAMP()
+      - SUM()
+      - VAR_POP()
+      - VAR_SAMP()
+      - VARIANCE()
+   - precision math
+
 SQL Statement Syntax
+   - Database Objects
+      - server
+      - database
+      - event
+      - index
+      - logfile event
+      - table
+      - tablespace
+      - trigger
+      - stored function
+      - stored procedure
+      - views
+   - DDS
+      - CREATE
+      - ALTER
+      - DROP
+      - RENAME
+      - TRUNCATE
+   - DMS
+      - CALL
+      - DO
+      - INSERT
+      - REPLACE
+      - UPDATE
+      - LOAD DATA
+      - LOAD XML
+      - DELETE
+      - HANDLER
+      - SELECT
+      - subquery
+   - TS
+      - START TRANSACTION , COMMIT , ROLLBACK
+      - cannot be rolled back
+      - implicit commit
+      - SAVEPOINT , ROLLBACK TO SAVEPOINT , RELEASE SAVEPOING
+      - LOCK TABLES , UNLOCK TABLES
+      - SET TRANSACTION
+      - XA Transactions 
+   - RS
+      - Master
+      - Slave
+   - PS
+      - PREPARE
+      - EXECUTE
+      - DEALLOCATE PREPARE
+   - CS
+      - BEGIN ... END
+      - label
+      - DECLARE
+      - sp variables
+      - flow control
+      - cursors
+      - condition handling
+   - AS
+      - account management
+      - table maintenance
+      - plugin and user-defined functions
+      - SET
+      - SHOW
+      - others
+   - US
+      - DESCRIBE
+      - EXPLAIN
+      - HELP
+      - USE
 
 InnoDB Storage Engine
 Alternative Storage Engines
