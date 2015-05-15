@@ -1,11 +1,11 @@
-database
-event
-logfile group
-function
-stored program
-prepared statement
-user
-table
-table constraint
-trigger
-view
+database              | CREATE | ALTER | DROP |
+event                 | CREATE | ALTER | DROP |
+logfile group         | CREATE | ALTER | DROP |
+function              | CREATE | ALTER | DROP |
+stored program        | CREATE | ALTER | DROP |
+prepared statement    | CREATE | ALTER | DROP |
+user                  | CREATE | ALTER | DROP |
+table                 | CREATE | ALTER | DROP |
+table constraint      | CREATE | ALTER | DROP |
+trigger               | CREATE |       | DROP |
+view                  | CREATE |       | DROP |
