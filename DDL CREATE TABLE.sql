@@ -15,8 +15,6 @@ select_statement
 =======================
 { LIKE old_tbl_name | ( LIKE old_tbl_name )}
 
-
-
 create_definition:
 col_name column_definition
 [ CONSTRAINT [ symbol ] ] PRIMARY KEY [ index_type ] ( index_col_name , ... ) [ index_option ] ...
@@ -26,12 +24,20 @@ col_name column_definition
 [ CONSTRAINT [ symbol ] ] FOREIGN KEY [ index_name ] ( index_col_name , ... ) reference_definition
 CHECK( expr )
 
-
 column_definition:
-data_type [ NOT NULL | NULL ] [ DEFAULT default_value ] [ AUTO_INCREMENT ] [ UNIQUE [ KEY ] | [ PRIMARY ] KEY ] [ COMMENT 'string' ]
+data_type
+[ NOT NULL | NULL ]
+[ DEFAULT default_value ]
+[ AUTO_INCREMENT ]
+[ UNIQUE [ KEY ] | [ PRIMARY ] KEY ]
+[ COMMENT 'string' ]
 [ COLUMN_FORMAT { FIXED | DYNAMIC | DEFAULT } ]
 [ STORAGE { DISK | MEMORY | DEFAULT } ]
 [ reference_definition ]
+
+data_type:
+
+
 
 index_col_name:
 col_name [ ( length ) ] [ ASC | DESC ]
@@ -46,7 +52,10 @@ WITH_PARSER parser_name
 COMMENT 'string'
 
 reference_definition:
-REFERENCES tbl_name ( index_col_name , ... ) [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE reference_option ] [ ON UPDATE reference_option ]
+REFERENCES tbl_name ( index_col_name , ... )
+[ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+[ ON DELETE reference_option ]
+[ ON UPDATE reference_option ]
 
 reference_option :
 RESTRICT | CASCADE | SET NULL | NO ACTION
@@ -79,3 +88,49 @@ STATS_SAMPLE_PAGES [=] value
 TABLESPACE tablespace_name [ STORAGE { DISK | MEMORY | DEFAULT } ]
 UNION [=] ( tbl_name , ... )
 
+partition_options :
+PARTITION BY { 
+	[ LINEAR ] HASH( expr )
+	[ LINEAR ] KEY [ ALGORITHM = ( 1 | 2 ) ] ( column_list ) 
+	RANGE{ ( expr ) | COLUMNS( column_list ) }
+	LIST{ ( expr ) | COLUMNS( column_list ) }
+	}
+[ PARTITIONS num ]
+[ SUBPARTITION BY  {
+	[ LINEAR ] HASH ( expr )
+	[ LINEAR ] KEY [ ALGORITHM = ( 1 | 2 ) ] ( column_list )
+	}
+	[ SUBPARTITIONS num ]
+]
+[ ( partition_definition , ... ) ]
+
+partition_definition:
+PARTITION partition_name
+	[ VALUES {
+		LESS THAN { ( expr | value_list ) }
+		IN ( value_list )
+		}
+	]
+	[ [ STORAGE ] ENGINE [=] engine_name ]
+	[ COMMENT [=] 'comment_text' ]
+	[ DATA DIRECTORY [=] 'data_dir' ]
+	[ INDEX DIRECTORY [=] 'index_dir' ]
+	[ MAX_ROWS [=] num ]
+	[ MIN_ROWS [=] num ]
+	[ TABLESPACE [=] tablespace_name ]
+	[ NODEGROUP [=] node_group_id ]
+	[ ( subpartition_definition , ... ) ]
+	
+subpartition_definition:
+SUBPARTITION logical_name
+	[ [ STORAGE ] ENGINE [=] engine_name ]
+[ COMMENT [=] 'comment_text' ]
+	[ DATA DIRECTORY [=] 'data_dir' ]
+	[ INDEX DIRECTORY [=] 'index_dir' ]
+	[ MAX_ROWS [=] num ]
+	[ MIN_ROWS [=] num ]
+	[ TABLESPACE [=] tablespace_name ]
+	[ NODEGROUP [=] node_group_id ]
+
+select_statement:
+	[ IGNORE | REPLACE ] [ AS ] SELECT ...
